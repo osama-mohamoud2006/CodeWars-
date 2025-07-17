@@ -1,20 +1,22 @@
-// problem 4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
+void input_floor(int arr[3]) {
+	for(int i = 0; i < 3; i++) {
+		cout << "Enter floor " << i + 1 << ": ";
+		cin >> arr[i];
+	}
+}
+int output_floor(int arr[3]) {
+	int res = 0;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+	for (int j = 0; j <2; j++) {
+		res += abs(arr[j] - arr[j + 1]);
+	}
+	return res;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+int main() {
+	int arr[3];
+	input_floor(arr);
+	cout << "the ans is " << output_floor(arr)<<endl;
+}
