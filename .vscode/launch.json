@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/projects/c++ course/Elzero problem solving c++ level two",
-      "program": "e:/projects/c++ course/Elzero problem solving c++ level two/build/Debug/outDebug",
+      "cwd": "e:/projects/c++ course/Elzero problem solving c++ level two/problem 6",
+      "program": "e:/projects/c++ course/Elzero problem solving c++ level two/problem 6/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
