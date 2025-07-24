@@ -1,44 +1,70 @@
+#include<iostream>
 #include <string>
-#include <iostream>
+using namespace std;
+/*
+For example:
 
-std::string solve(std::string s) {
-    int n = s.length();
+"our code" => "edo cruo"
+-- Normal reversal without spaces is "edocruo".
+-- However, there is a space at index 3, so the string becomes "edo cruo"
 
-    // ?????? ???? ?????? (??? ????????)
-    char chars[1000]; // ??? ???? ????
-    int charCount = 0;
+"your code rocks" => "skco redo cruoy".
+"codewars" => "srawedoc"
 
-    // ??? ???? ?????? ??? ????????
-    for (int i = 0; i < n; i++) {
-        if (s[i] != ' ') {
-            chars[charCount] = s[i];
-            charCount++;
-        }
-    }
 
-    // ???? ???????
-    std::string result = "";
-    int charIndex = charCount - 1; // ????? ?? ??? ??? ?? ????????
+*/
+string input() {
+	string str;
+	cout << "enter the string: ";
+	getline(cin, str);
+	return  str;
+ }
 
-    for (int i = 0; i < n; i++) {
-        if (s[i] == ' ') {
-            result += ' '; // ?????? ??? ???????
-        }
-        else {
-            result += chars[charIndex]; // ????? ????? ???????
-            charIndex--;
-        }
-    }
+void fill_index(int number, int arr[100], int& l2) {
+	l2++;
+	arr[l2 - 1] = number;
 
-    return result;
 }
 
-// ?????? ??????
-int main() {
-    std::cout << "Test 1: \"" << solve("codewars") << "\" (Expected: \"srawedoc\")" << std::endl;
-    std::cout << "Test 2: \"" << solve("your code") << "\" (Expected: \"edoc ruoy\")" << std::endl;
-    std::cout << "Test 3: \"" << solve("a b c") << "\" (Expected: \"c b a\")" << std::endl;
-    std::cout << "Test 4: \"" << solve("you are amazing") << "\" (Expected: \"gni zama era uoy\")" << std::endl;
 
-    return 0;
+void fill_array_with_index(string str , int arr[100] , int &l2) {
+
+	int index_to_pass = 0; 
+	for (int index = 0; index < str.length(); index++) {
+		// to get the inderx od first word
+		if (str[index] != ' ') index_to_pass++;
+		else {
+			fill_index(index_to_pass, arr, l2);
+		} // 4 , 7 , 10 
+	}
+
+
+	
+}
+
+void string_with_og_index(string str, int arr[100], int l2) {
+	string result = "";
+	for (int in = 0; in < l2; in++) {
+		// 4 
+
+		for (int g = str.length()-1; g >= 0; g--) {
+			
+			int count = arr[in]; // 4
+			if (count != 0)result += str[g];
+			count--;
+
+		}
+
+
+	}
+	cout << "the result: " << result << endl;
+
+}
+
+int main() {
+	int arr[100];
+	int l2 = 0; 
+	string str = input();
+	fill_array_with_index(str, arr, l2);
+	string_with_og_index(str, arr, l2);
 }
