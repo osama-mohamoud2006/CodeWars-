@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 string input_number() {
-	string n;
+	string n="";
 	cout << "enter number: ";
 	cin >> n;
 
@@ -21,13 +21,12 @@ void all_possible_sum(int arr[100], string number , int &l2)
 	for (int i = 0; i < number.length(); i++)
 	{
 		num = number[i] - '0';
-		/// 1  
+		/// 3
 		for (int j = i+1; j < number.length(); j++)
 		{
 			//1 + 2,3,4,5
 			num2 = number[j] - '0';
-			sum = num + num2; // 1+2 
-			fill_array(sum, l2, arr);
+			sum = num + num2; // 1+2 			fill_array(sum, l2, arr);
 
 	   }
 
