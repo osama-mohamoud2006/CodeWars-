@@ -1,42 +1,40 @@
-#include <iostream>
+#include<iostream>
 #include <string>
 using namespace std;
+string input() {
+	string str;
+	cout << "enter string: ";
+	getline(cin, str);
+	return str; 
+ }
 
-string reverse_preserve_spaces(string str) {
-    string only_chars = "";
+string get_word_without_spaces(string str) {
+	string word = "";
+	for (int f = 0; f < str.length(); f++)
+		if(str[f]!=' ')word += str[f];
+	return word;
+}
 
-    // Step 1: Get all characters without spaces
-    for (int i = 0; i < str.length(); i++) {
-        if (str[i] != ' ')
-            only_chars += str[i];
-    }
+string reverse_word(string word) {
+	string reversed = "";
+	for (int r = word.length() - 1; r >= 0; r--)
+		reversed += word[r];
+	return reversed;
+}
 
-
-    // Step 2: Reverse only the characters
-    reverse(only_chars.begin(), only_chars.end());
-
-    // Step 3: Fill result keeping spaces in same positions
-    string result = "";
-    int char_index = 0;
-    for (int i = 0; i < str.length(); i++) {
-        if (str[i] == ' ')
-            result += ' ';
-        else {
-            result += only_chars[char_index];
-            char_index++;
-        }
-    }
-
-    return result;
+void final_output(string reversed , string word ) {
+	string result = "";
+	int index = 0; 
+	for (int o = 0; o < word.length(); o++) {
+			if(word[o]!=' ') result += reversed[index++];
+		if (word[o] == ' ') result += ' ';
+	
+	}
+	cout << "\nthe output " << result << endl;
 }
 
 int main() {
-    string s;
-    cout << "Enter the string: ";
-    getline(cin, s);
-
-    string res = reverse_preserve_spaces(s);
-    cout << "Result: " << res << endl;
-
-    return 0;
+	string word_input = input(); 
+	string word = get_word_without_spaces(word_input);
+	final_output(reverse_word(word), word_input);
 }
