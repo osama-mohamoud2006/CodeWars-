@@ -14,7 +14,7 @@ using namespace AllStuff;
 string mid(string input) {
 	string res = "";
 	int length_for_output = (input.length() / 2);
-	for (char c : input) {
+	
 
 		if (is_even(input.length())) {
 			res.push_back(input[length_for_output - 1]);
@@ -25,7 +25,7 @@ string mid(string input) {
 		else res.push_back(input[ceil(length_for_output)]);
 			return res; 
 		
-	}
+	
 
 }
 
