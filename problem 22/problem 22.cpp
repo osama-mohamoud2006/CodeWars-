@@ -10,7 +10,7 @@ int main(){
     cout<<"\n"<<remove_vowel("aeiou")<<"\n";
 }
 
-                 ///// first method ../////////
+0                 ///// first method ../////////
 //  string remove_vowel(string str){
 //  string without = "";
 //  for(char c : str){
