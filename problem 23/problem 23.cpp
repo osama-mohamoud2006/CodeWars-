@@ -17,6 +17,7 @@ bool is_string_belongingto(string a , string b ){
                     v = true;
                     break;
                  }
+                 if(v==false) return false;
            }
 
         }
@@ -26,5 +27,5 @@ bool is_string_belongingto(string a , string b ){
 
 
 int main(){
- cout<<  is_string_belongingto("abcde" ,"cde" )<<endl;
+ cout<<  is_string_belongingto("sumo" ,"omo" )<<endl;
 }
