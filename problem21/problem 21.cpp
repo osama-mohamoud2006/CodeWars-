@@ -23,25 +23,24 @@ using namespace std;
 */
 
 bool validParentheses( string str) {
-    bool res = false;
-  for(int i=0; i<str.length(); i++){
-  /// ( --> 40
-  // )  ---> 41
 
-    if(str[i] == char(40) ) {
-// ( ( 
-    if( str[i+1]== char(40) ) res = true;
-   
-    else if(  str[i+1]==char(41) ) res = true;
-    else res =false;
+ int ok =0 ;
+    
 
-    }
+  for( char c: str){
+  (c=='(') ? ok++ : ok--;
+ if(ok<0)  return false;  
+    
   }
 
-  return res;
+ 
+  
+
+  return !ok ;
 }
+
 
 int main(){
      
- cout<< validParentheses("())(()" ) <<endl;
+ cout<< validParentheses( ")(") <<endl;
 }
