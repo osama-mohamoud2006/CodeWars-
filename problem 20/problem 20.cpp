@@ -10,7 +10,7 @@ string upper_the_odd(string upper_word) {
 	string res = "";
 	int fakel = 1;
 	for (int f = 0; f < upper_word.length(); f++) {
-		// 1-1 
+		// 1
 		
 		if (is_odd(fakel) == false) res += upper_word[f];
 		if (is_odd(fakel) == true) res += toupper(upper_word[f]);
