@@ -6,33 +6,19 @@ using namespace std;
 
 
 bool is_string_belongingto(string a, string b) {
-
-  
-
-    // abc  --- > bc 
-    bool v = false;
-    for (int i = 0; i < b.length(); i++) {
-        ///c d e
-        //c 
+    bool v = false; 
+    int l = b.length();
+    for (int i = l; l >= 0; l--) {
         v = false;
-        for (int i2 = 0; i2 < a.length(); i2++) {
-            // a b c d e 
-            if (tolower(b[i]) == tolower(a[i2])) {
-                v = true; 
-                break;
-               
-            }
-         
-
-        }
-        if (v != true) return false;
-     
+        /// 3,2 ,2 
+        // bcd b-->c-->d
+        if (tolower(a[i]) == tolower(b[i])) v = true;
     }
+     return v;
 
-    if (v == true) return true;
 }
 
 
 int main() {
-    cout << is_string_belongingto("sumo", "omo") << endl;
+    cout << is_string_belongingto("samurai", "ai") << endl;
 }
