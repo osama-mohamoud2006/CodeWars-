@@ -11,14 +11,15 @@ bool is_string_belongingto(string a , string b ){
     for(int i=0; i<b.length(); i++){
            ///c d e
            //d
-           for(int i2=0; i<a.length(); i2++){
+           for(int i2=0; i2<a.length(); i2++) {
                  // a b c d e 
                  if(b[i] == a[i2] ){
-                    v = true;
-                    break;
+                   return true;
                  }
-                 if(v==false) return false;
+                
            }
+
+           
 
         }
 
@@ -27,5 +28,5 @@ bool is_string_belongingto(string a , string b ){
 
 
 int main(){
- cout<<  is_string_belongingto("sumo" ,"omo" )<<endl;
+ cout<<  is_string_belongingto("samurai" ,"ai" )<<endl;
 }
