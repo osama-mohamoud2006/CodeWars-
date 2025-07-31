@@ -28,7 +28,14 @@ bool validParentheses( string str) {
   /// ( --> 40
   // )  ---> 41
 
-    if(str[i] == char(40) ) res = true ;
+    if(str[i] == char(40) ) {
+// ( ( 
+    if( str[i+1]== char(40) ) res = true;
+   
+    else if(  str[i+1]==char(41) ) res = true;
+    else res =false;
+
+    }
   }
 
   return res;
@@ -36,5 +43,5 @@ bool validParentheses( string str) {
 
 int main(){
      
- cout<< validParentheses( "()" ) <<endl;
+ cout<< validParentheses("())(()" ) <<endl;
 }
