@@ -7,10 +7,10 @@ using namespace std;
 string remove_vowel(string str="" , int c=0);
 
 int main(){
-    cout<<"\n"<<remove_vowel("aeiou")<<"\n";
+    cout<<"\n"<<remove_vowel("osama")<<"\n";
 }
 
-0                 ///// first method ../////////
+https://www.notion.so/problem-21-232b28831d9781a6ac8ac38ef48d737e?source=copy_link               ///// first method ../////////
 //  string remove_vowel(string str){
 //  string without = "";
 //  for(char c : str){
