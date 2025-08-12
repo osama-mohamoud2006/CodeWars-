@@ -25,8 +25,12 @@ void output(vector <int>);
 // }
 
 int main(){
- 
-    output( digitize(1234));
+    // 2 methods to call vector function to use it for another thing
+  vector <int> print ;  // first method make vector to store function result 
+  print = digitize(1234); // yes the this way is true
+  output(print); // second the vector as parameter to print its elements 
+  cout<<"\n";
+    output( digitize(1234)); // or send the function directly 
 }
 
 void output(vector <int> print){
