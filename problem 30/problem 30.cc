@@ -18,6 +18,6 @@ bool XO(const string& str)
 }
 
 int main(){
-    XO("ooxx");
+    cout<<XO("ooxx")<<endl;
 }
 
